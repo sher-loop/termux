@@ -1,18 +1,12 @@
-clear
-GREEN='\033[0;32m'
-FISH_DIR="$HOME/.config/fish"
-FISH_CONF="$FISH_DIR/config.fish"
+#!/data/data/com.termux/files/usr/bin/sh
 
-mkdir -p "$FISH_DIR"
+mkdir -p "$HOME/.config/fish"
 
-cat > "$FISH_CONF" <<'EOF'
+cat > "$HOME/.config/fish/config.fish" <<'EOF'
 function fish_prompt
-    echo -e (set_color red)"<sherlock>"(set_color green)"=>"(set_color normal)
+    set_color green
+    printf '[%s]\n' (prompt_pwd)
+    set_color blue
+    printf '(sherlock) => '
+    set_color normal
 end
-function fish_greeting
-echo -e "\033[0;32m          S  H  E  R  L  O  C  K\n          "
-end
-EOF
-echo 'bash ~/start.sh' >> ~/.bashrc
-fish
-
