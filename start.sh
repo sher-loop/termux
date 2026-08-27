@@ -1,7 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/sh
-
 mkdir -p "$HOME/.config/fish"
-
 cat > "$HOME/.config/fish/config.fish" <<'EOF'
 function fish_prompt
     set_color green
@@ -10,3 +7,4 @@ function fish_prompt
     printf '(sherlock) => '
     set_color normal
 end
+EOF
